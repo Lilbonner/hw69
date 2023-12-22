@@ -14,12 +14,15 @@ const Search = () => {
 
 
     return (
-        <div>
-            <h3>TV shows</h3>
+        <div >
+            <h3 className='title'>
+                TV shows
+            </h3>
             <div>
-                <p>Search for tv shows</p>
-                <input value={query} onChange={(e) => setQuery(e.target.value)} />
-                <button onClick={handleSearch}>Search</button>
+                <p className='search-title'>Search for tv shows:
+                    <input className='input' placeholder='enter show name' value={query} onChange={(e) => setQuery(e.target.value)} />
+                    <button onClick={handleSearch}>Search</button>
+                </p>
             </div>
             <div>
                 {shows.map((show) => (
