@@ -7,8 +7,8 @@ export const fetchShows = createAsyncThunk('tvShow/fetchShows', async (query) =>
 });
 
 export const tvShowSlice = createSlice({
-    name: 'tvShow',
-    initialState: { shows: [], status: 'idle', error: null },
+    name: 'tvShows',
+    initialState: {shows: [], status: 'idle', error: null},
     reducers: {},
     extraReducers: (builder) => {
         builder

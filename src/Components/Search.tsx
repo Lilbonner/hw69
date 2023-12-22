@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchShows } from './TvShowSlice.tsx';
 import { Link } from 'react-router-dom';
@@ -26,10 +26,10 @@ function Search() {
                 <input className='input' value={query} onChange={(e) => setQuery(e.target.value)} />
                 </p>
                 {showAutocomplete && (
-                    <div style={{ position: 'absolute' }}>
+                    <div className='autocomplete' style={{ position: 'absolute' }}>
                         {shows.map((show) => (
                             <div key={show.show.id}>
-                                <Link to={`/shows/${show.show.id}`}>{show.show.name}</Link>
+                                <Link className='link' to={`/shows/${show.show.id}`}>{show.show.name}</Link>
                             </div>
                         ))}
                     </div>
