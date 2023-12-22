@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import tvShowReducer from '../Components/tvShowSlice.tsx';
+import tvShowReducer from '../Components/TvShowSlice.tsx';
 
 export default configureStore({
     reducer: {

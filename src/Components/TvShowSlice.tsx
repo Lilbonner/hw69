@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchShows = createAsyncThunk('tvShow/fetchShows', async (query) => {
@@ -7,8 +7,8 @@ export const fetchShows = createAsyncThunk('tvShow/fetchShows', async (query) =>
 });
 
 export const tvShowSlice = createSlice({
-    name: 'tvShows',
-    initialState: {shows: [], status: 'idle', error: null},
+    name: 'tvShow',
+    initialState: { shows: [], status: 'idle', error: null },
     reducers: {},
     extraReducers: (builder) => {
         builder
