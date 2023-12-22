@@ -40,3 +40,22 @@
   color: white;
   background-color: blue;
 }
+
+.show-details {
+  display: flex;
+}
+
+.img {
+  display: flex;
+}
+
+.show-title {
+  margin-left: 50px;
+  display: flex;
+}
+
+.summary {
+  display: flex;
+  margin-left: 50px;
+  max-width: 300px;
+}

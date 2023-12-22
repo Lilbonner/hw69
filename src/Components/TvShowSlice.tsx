@@ -6,9 +6,14 @@ export const fetchShows = createAsyncThunk('tvShow/fetchShows', async (query) =>
     return response.data;
 });
 
+export const fetchShowDetail = createAsyncThunk('tvShow/fetchShowDetails', async (id) => {
+    const response = await axios.get(`http://api.tvmaze.com/shows/${id}`);
+    return response.data;
+});
+
 export const tvShowSlice = createSlice({
-    name: 'tvShows',
-    initialState: {shows: [], status: 'idle', error: null},
+    name: 'tvShow',
+    initialState: { shows: [], showDetail: null, status: 'idle', error: null },
     reducers: {},
     extraReducers: (builder) => {
         builder
@@ -20,6 +25,16 @@ export const tvShowSlice = createSlice({
                 state.shows = action.payload;
             })
             .addCase(fetchShows.rejected, (state) => {
+                state.status = 'failed';
+            })
+            .addCase(fetchShowDetail.pending, (state) => {
+                state.status = 'loading';
+            })
+            .addCase(fetchShowDetail.fulfilled, (state, action) => {
+                state.status = 'succeeded';
+                state.showDetail = action.payload;
+            })
+            .addCase(fetchShowDetail.rejected, (state) => {
                 state.status = 'failed';
             });
     },
